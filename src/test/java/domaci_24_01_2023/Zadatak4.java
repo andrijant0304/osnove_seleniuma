@@ -14,23 +14,25 @@ public class Zadatak4 {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-//        driver.manage().window().maximize();
         driver.get("https://www.tutorialrepublic.com/snippets/bootstrap/table-with-add-and-delete-row-feature.php");
         Thread.sleep(1000);
+
+        driver.findElement(By.xpath("//button[@class='btn btn-info add-new']")).click();
 
         for (int i = 0; i < 5; i++) {
             driver.findElement(By.xpath("//button[@class='btn btn-info add-new']")).click();
             Thread.sleep(1000);
-//            driver.findElement(By.xpath("//td/input[@id='name']")).sendKeys("Andrija A");
+
             driver.findElement(By.name("name")).sendKeys("Andrija A");
             Thread.sleep(1000);
-//            driver.findElement(By.xpath("//td/input[@id='department']")).sendKeys("QA");
+
             driver.findElement(By.name("department")).sendKeys("QA");
             Thread.sleep(1000);
-//            driver.findElement(By.xpath("//td/input[@id='phone']")).sendKeys("(381)116-2222");
+
             driver.findElement(By.name("phone")).sendKeys("(381)116-2222");
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//a[@class='add']/i")).click();
+            Thread.sleep(2000);
+
+            driver.findElement(By.xpath("//tbody/tr[last()]/td[4]/a[1]")).click();
             Thread.sleep(1000);
         }
 

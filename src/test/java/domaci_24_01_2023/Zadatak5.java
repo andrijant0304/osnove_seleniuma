@@ -17,15 +17,25 @@ public class Zadatak5 {
         driver.findElement(By.xpath("//i[@aria-label='Play']")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//i[@aria-label='Mute']")).click();
+        Thread.sleep(3000);
+
+        driver.findElement(By.xpath("//i[@class='art-icon art-icon-screenshot']")).click();
+//        driver.findElement(By.xpath("//*[contains(@class, 'screenshot')]")).click();
+
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//i[@class='art-icon art-icon-pip'")).click();
+        driver.findElement(By.xpath("//*[contains(@class, 'art-icon-pip')]")).click();
+        driver.findElement(By.xpath("//i[@class='art-icon art-icon-pip']")).click();
+
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//i[@class='art-icon art-icon-pip'")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//i[@class='art-icon art-icon-fullscreenWebOn'")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//i[@class='art-icon art-icon-fullscreenWebOn'")).click();
-        Thread.sleep(1000);
+
+        driver.findElement(By.xpath("//i[@class='art-icon art-icon-pip']")).click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//i[@class='art-icon art-icon-fullscreenWebOn']")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//i[@class='art-icon art-icon-fullscreenWebOff']")).click();
+
+        Thread.sleep(2000);
 
         Thread.sleep(5000);
         driver.quit();

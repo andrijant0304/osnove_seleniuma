@@ -22,7 +22,7 @@ public class Zadatak2 {
 
         driver.manage().window().maximize();
         driver.get("https://example.cypress.io/todo");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         for (int i = 0; i < todo.size(); i++) {
             driver.findElement(By.className("new-todo")).sendKeys(todo.get(i) + "\n");
