@@ -14,10 +14,11 @@ public class Zadatak4 {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
+        driver.manage().window().maximize();
+
         driver.get("https://www.tutorialrepublic.com/snippets/bootstrap/table-with-add-and-delete-row-feature.php");
         Thread.sleep(1000);
 
-        driver.findElement(By.xpath("//button[@class='btn btn-info add-new']")).click();
 
         for (int i = 0; i < 5; i++) {
             driver.findElement(By.xpath("//button[@class='btn btn-info add-new']")).click();
