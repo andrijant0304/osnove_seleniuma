@@ -47,7 +47,7 @@ public class Vezbanje7 {
             System.out.println("Kategorija 'Automobili' nije na prvom mestu");
         }
 
-        driver.findElement(By.xpath("//app-category-picker-item//a[contains(text(), 'Automobili')]")).click();
+//        driver.findElement(By.xpath("//app-category-picker-item//a[contains(text(), 'Automobili')]")).click();
 
         Thread.sleep(5000);
         driver.quit();
