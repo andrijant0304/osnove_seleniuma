@@ -12,9 +12,10 @@ public class Zadatak1 {
     public static void main(String[] args) {
 
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
 
+        WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/modal-dialogs");
+
         driver.findElement(By.id("showLargeModal")).click();
 
         Helper elemId = new Helper();

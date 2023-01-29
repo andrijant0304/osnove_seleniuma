@@ -10,9 +10,10 @@ public class Zadatak2 {
     public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
 
+        WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
         driver.get("file:///C:/HTML%201/IT%20Bootcamp/IT%20Bootcamp%202022/Nastava/9.%20nedelja%20-%20Selenium/predavanja/Zadatak4.html");
 
         for (int i = 0; i < 5; i++) {
@@ -22,6 +23,9 @@ public class Zadatak2 {
 //            driver.findElements(By.xpath("//body/div[last() + 1]"));          ne moze ovako
 
         }
+
+        Thread.sleep(3000);
+        driver.quit();
     }
 }
 
