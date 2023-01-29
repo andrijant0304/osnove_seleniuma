@@ -12,6 +12,7 @@ public class Zadatak1 {
     public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+
         WebDriver driver = new ChromeDriver();
         Actions actions = new Actions(driver);
 
@@ -29,12 +30,15 @@ public class Zadatak1 {
 
 //        driver.findElement(By.className("new-todo")).sendKeys(todos.get(i) + "\n");
 
-            driver.findElement(By.className("new-todo")).sendKeys(todos.get(i) + Keys.ENTER);
+            driver.findElement(By.className("new-todo"))
+                    .sendKeys(todos.get(i) + Keys.ENTER);
             Thread.sleep(1500);
             System.out.println(todos.get(i));
+
             if (todos.get(i).equals(driver.findElement(
-                    By.xpath("//li[last()]//div[@class='view']/label")).getText())) {
-                System.out.println("Unet je novi toDo :)");
+                    By.xpath("//li[last()]//div[@class='view']/label"))
+                        .getText())) {
+                System.out.println("Unet je novi toDo");
             }
 
         }
@@ -51,7 +55,11 @@ public class Zadatak1 {
             Thread.sleep(1000);
         }
 
+        List<WebElement> listaToDo = driver.findElements(By.xpath("//li//div[@class='view']"));
 
+        if (listaToDo.isEmpty()){
+            System.out.println("Lista toDo-a je prazna");
+        }
 
         Thread.sleep(5000);
         driver.quit();

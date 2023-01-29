@@ -21,9 +21,9 @@ public class Vezbanje2 {
         System.out.println(izrazLista);                                        // Print the list of characters
 
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
 
-//        driver.manage().window().maximize();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://www.calculatorsoup.com/calculators/math/basic.php");
 
         Thread.sleep(10000);

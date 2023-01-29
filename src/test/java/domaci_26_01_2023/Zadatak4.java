@@ -9,9 +9,9 @@ public class Zadatak4 {
     public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
 
-//        driver.manage().window().maximize();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://geodata.solutions/");
 
         Select country = new Select(driver.findElement(By.id("countryId")));
@@ -30,7 +30,6 @@ public class Zadatak4 {
         Thread.sleep(1000);
 //        city.selectByVisibleText("Nis");
         city.selectByValue("Nis");
-
 
         Thread.sleep(3000);
         driver.quit();
