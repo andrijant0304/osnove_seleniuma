@@ -10,11 +10,10 @@ public class Zadatak1 {
     public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
 
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
         driver.get("https://mdbootstrap.com/docs/standard/components/toasts/#section-basic-example");
 
         driver.findElement(By.id("basic-primary-trigger")).click();
