@@ -1,11 +1,11 @@
 package domaci_31_01_2023;
 
+import helper.Helper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -25,37 +25,36 @@ public class Zadatak3 {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.get("https://itbootcamp.rs/");
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
         Thread.sleep(1000);
 
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(By.className("slider_bkgd"))).perform();
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("vc_row wpb_row vc_row-fluid slider_bkgd")));
 
         List<WebElement> srcList = driver.findElements(By.xpath("//*[@class='carousel-item']/img"));
-
         for (int i = 0; i < srcList.size(); i++) {
-          String srcLink =  srcList.get(i).getAttribute("src");
-
-//            System.out.println(srcLink);
+          String srcLink = srcList.get(i).getAttribute("src");
 
             URL url = new URL(srcLink);
             HttpURLConnection http = (HttpURLConnection)url.openConnection();
-//            System.out.println(http.getResponseCode());
 
             if (http.getResponseCode() >= 200 && http.getResponseCode() < 400) {
                 System.out.println("Link: " + url + " is available.");
+
             } else {
                 System.out.println("Link: " + url + " is not available.");
             }
+
+            try {
+                new Helper().downloadUsingStream(srcLink, "itbootcamp_slider/0"+ i + ".jpg");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-
-
-
-
         Thread.sleep(3000);
-//        driver.quit();
+        driver.quit();
     }
 }
 
