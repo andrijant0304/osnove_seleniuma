@@ -36,7 +36,6 @@
     <orderEntry type="library" name="Maven: dev.failsafe:failsafe:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-ie-driver:4.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-remote-driver:4.7.2" level="project" />
-    <orderEntry type="library" name="Maven: com.beust:jcommander:1.82" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.84.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.84.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.84.Final" level="project" />
@@ -78,5 +77,7 @@
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-manager:4.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-safari-driver:4.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-support:4.7.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:7.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.beust:jcommander:1.72" level="project" />
   </component>
 </module>
