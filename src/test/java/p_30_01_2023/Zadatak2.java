@@ -12,15 +12,13 @@ import java.time.Duration;
 public class Zadatak2 {
     public static void main(String[] args) {
 
-
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+
         WebDriver driver = new ChromeDriver();
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(10));
-
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         driver.get("https://youtube.com");
 
@@ -28,15 +26,9 @@ public class Zadatak2 {
         driver.findElement(By.xpath("//input[@id='search']")).sendKeys(Keys.SPACE);
 
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//li[@role='presentation']"), 3));
-        driver.findElement(By.xpath("//li[@role='presentation'][last()]")).click();
+        driver.findElement(By.xpath("//li[@role='presentation'][1]")).click();
 
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("precent")));
-//        wait.until(ExpectedConditions.titleContains("Progres"));
-//        wait.until(ExpectedConditions.)
-
-
-
-//        driver.quit();
+        driver.quit();
     }
 }
 
