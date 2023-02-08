@@ -48,7 +48,7 @@ public class BootstrapTableTests {
         Assert.assertEquals(driver.getTitle(),"Table with Edit and Update Data - Bootsnipp.com");
 
         driver.findElement(By.cssSelector("#d1 .update")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".modal-content")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#edit .modal-content")));
 
         driver.findElement(By.cssSelector("#fn")).clear();
         driver.findElement(By.cssSelector("#fn")).sendKeys(firstName);
@@ -62,7 +62,7 @@ public class BootstrapTableTests {
 
         driver.findElement(By.cssSelector("#up")).click();
 
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".modal-content")));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#edit .modal-content")));
 
         Assert.assertTrue(driver.findElement(By.cssSelector("#f1")).getText().contains(firstName), "Invalid first name" );
         Assert.assertTrue(driver.findElement(By.cssSelector("#l1")).getText().contains(lastName), "Invalid last name");
@@ -78,10 +78,10 @@ public class BootstrapTableTests {
         List<WebElement> rows = driver.findElements(By.cssSelector("#d1 .delete"));
 
         driver.findElement(By.cssSelector("#d1 .delete")).click();
-        wait.until(ExpectedConditions.presenceOfElementLocated((By.cssSelector(".modal-content"))));
+        wait.until(ExpectedConditions.visibilityOfElementLocated((By.cssSelector("#delete .modal-content"))));
 
         driver.findElement(By.cssSelector(".modal-footer .btn-danger")).click();
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".modal-content")));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#delete .modal-content")));
 
         List<WebElement> rowsAfterDelete = driver.findElements(By.cssSelector("#d1 .delete"));
         Assert.assertEquals(rowsAfterDelete.size(),rows.size()-1, "Table element is not deleted");
